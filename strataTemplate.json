@@ -1,0 +1,36 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default config for Strata templates themselves",
+  "extends": [
+    // While `config:best-practices`[1] is more ideal, there isn't a lot of
+    // capacity to stay on top of faster updates and the release cadence for
+    // each template varies widely. Projects can't rely on the templates
+    // themselves for these kind of updates nor do all projects have automated
+    // updates for things like digest pinning yet.
+    //
+    // Once the release cycle for the templates is faster and we have better guidance
+    // for projects on keeping up-to-date (either with Renovate themselves or via template
+    // updates), Strata templates ideally can migrate to the same settings recommended
+    // for projects.
+    //
+    // [1] https://docs.renovatebot.com/presets-config/#configbest-practices
+    "config:recommended",
+    "security:minimumReleaseAgeNpm",
+
+    // Templates have container files that generally should follow the _VERSION
+    // pattern to tie in with a groupLangUpdates* preset.
+    "customManagers:dockerfileVersions",
+
+    // Roughly go through and update things on a monthly cadence
+    "schedule:monthly",
+    ":maintainLockFilesMonthly",
+
+    // Strata stuff
+    "github>navapbc/strata-lib-renovate:dependencyDashboard",
+    "github>navapbc/strata-lib-renovate:groupNonMajorUpdatesByManager",
+    "github>navapbc/strata-lib-renovate:labels",
+    "github>navapbc/strata-lib-renovate:security",
+    "github>navapbc/strata-lib-renovate:templateFileMatch",
+  ]
+}

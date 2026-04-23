@@ -1,0 +1,10 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Allow rules to match Strata templates files for updates",
+  "github-actions": {
+    "managerFilePatterns": [
+      "/^template/\\.github/(?:workflows|actions)/.+\\.ya?ml(?:.jinja)?$/"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Apply standard Strata labels",
+  "addLabels": [
+    "scope: dependencies",
+    "kind: maintenance"
+  ],
+  "vulnerabilityAlerts": {
+    "addLabels": [
+      "kind: security"
+    ]
+  }
+}

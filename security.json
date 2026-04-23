@@ -1,0 +1,19 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Base security/vulnerability settings",
+
+  "extends": [
+    "security:minimumReleaseAgeNpm",
+    "security:openssf-scorecard"
+  ],
+
+  // Be sure you have enabled Dependency graph/Dependabot alerts for the repo.
+  //
+  // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
+  "vulnerabilityAlerts": {
+    "enabled": true,
+  },
+
+  "osvVulnerabilityAlerts": true,
+}

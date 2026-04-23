@@ -1,0 +1,12 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Tweaked settings for Dependency Dashboard",
+
+  // Should generally already be the case, but reinforce
+  "dependencyDashboard": true,
+
+  // As of April 2026, this is experimental
+  // https://docs.renovatebot.com/configuration-options/#dependencydashboardosvvulnerabilitysummary
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
+}

@@ -1,0 +1,9 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "General recommended config",
+  "extends": [
+    "config:best-practices",
+    "github>navapbc/strata-lib-renovate:security"
+  ]
+}
