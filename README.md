@@ -48,3 +48,14 @@ echo "use flake" >> .envrc
 ```
 
 See output of `make help` for development utilities.
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the
+[LICENSE](LICENSE) file for details.
+
+## Community
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
