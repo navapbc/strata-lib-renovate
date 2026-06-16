@@ -1,0 +1,12 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Separate out changes that are for the template itself and do not impact instances",
+  "packageRules": [
+    {
+      "matchFileNames": ["!template/**", "!copier.y?(a)ml"],
+      "commitMessagePrefix": "template-only:",
+      "additionalBranchPrefix": "template-only-"
+    },
+  ]
+}

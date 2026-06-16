@@ -8,17 +8,19 @@ standards and practices.
 
 <!-- preset_summary_table_begin -->
 
-Preset                             | Description
----                                | ---
-default.json                       | General recommended config
-dependencyDashboard.json           | Tweaked settings for Dependency Dashboard
-groupLangUpdatesRuby.json          | Group updates to the Ruby language
-groupNonMajorUpdatesByManager.json | Group non-major package updates by package manager
-labels.json                        | Apply standard Strata labels
-security.json                      | Base security/vulnerability settings
-strataTemplate.json                | Default config for Strata templates themselves
-templateFileMatch.json             | Allow rules to match Strata templates files for updates
-terraformAwsLambdaRuntimes.json    | Update AWS Lambda runtime values in Terraform files
+Preset                                        | Description
+---                                           | ---
+default.json                                  | General recommended config
+dependencyDashboard.json                      | Tweaked settings for Dependency Dashboard
+groupLangUpdatesRuby.json                     | Group updates to the Ruby language
+groupNonMajorUpdatesByManager.json            | Group non-major package updates by package manager
+labels.json                                   | Apply standard Strata labels
+security.json                                 | Base security/vulnerability settings
+strataTemplate.json                           | Default config for Strata templates themselves
+strataTemplateSeparateTemplateOnly.json       | Separate out changes that are for the template itself and do not impact instances
+strataTemplateSeparateTemplateOnlyLegacy.json | Separate out changes that are for the template itself and do not impact instances, using the legacy `template-only-*` convention
+templateFileMatch.json                        | Allow rules to match Strata templates files for updates
+terraformAwsLambdaRuntimes.json               | Update AWS Lambda runtime values in Terraform files
 <!-- preset_summary_table_end -->
 
 > [!NOTE]
