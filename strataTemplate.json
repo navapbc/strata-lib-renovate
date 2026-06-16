@@ -16,7 +16,6 @@
     //
     // [1] https://docs.renovatebot.com/presets-config/#configbest-practices
     "config:recommended",
-    "security:minimumReleaseAgeNpm",
 
     // Templates have container files that generally should follow the _VERSION
     // pattern to tie in with a groupLangUpdates* preset.
