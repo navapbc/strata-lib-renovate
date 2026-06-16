@@ -18,6 +18,7 @@ labels.json                        | Apply standard Strata labels
 security.json                      | Base security/vulnerability settings
 strataTemplate.json                | Default config for Strata templates themselves
 templateFileMatch.json             | Allow rules to match Strata templates files for updates
+terraformAwsLambdaRuntimes.json    | Update AWS Lambda runtime values in Terraform files
 <!-- preset_summary_table_end -->
 
 > [!NOTE]

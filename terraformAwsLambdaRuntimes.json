@@ -1,0 +1,45 @@
+// -*- mode: jsonc -*-
+// Add a line like:
+//
+//   # renovate: aws-lambda-runtime
+//
+// above your `runtime` line in an `aws_lambda_function` block.
+//
+// If the default version detection isn't working, you can specify you own in a
+// `versioning` field in the comment, for example:
+//
+//   # renovate: aws-lambda-runtime versioning=exact
+//
+// which would effectively disable any version extraction/major/minor detection
+// and just use the version string exactly as specified.
+//
+// For the list of runtime values that will be compared, see
+// https://endoflife.date/api/aws-lambda.json
+//
+// Inspiration from https://github.com/renovatebot/renovate/discussions/21586#discussioncomment-14345281
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Update AWS Lambda runtime values in Terraform files",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/.+\\.tf$/"],
+      "matchStrings": [
+        ".*#\\s*renovate:\\s*aws-lambda-runtime( versioning=(?<versioning>.*?))?\\s.*?runtime\\s*=\\s*\"(?<currentValue>.*)\"",
+        ".*#\\s*renovate:\\s*depName=aws-lambda( versioning=(?<versioning>.*?))?\\s.*?runtime\\s*=\\s*\"(?<currentValue>.*)\"",
+        ".*#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?runtime\\s*=\\s*\"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "{{#if depName}}{{{depName}}}{{else}}aws-lambda{{/if}}",
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}endoflife-date{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}regex:^(?<compatibility>[A-Za-z]+)(?<major>\\d+)(\\.(?<minor>\\d+))?(?:.x)?${{/if}}"
+    }
+  ],
+  "packageRules": [
+    // the default generated branch names are not great, generate a clearer default
+    {
+      "matchManagers": ["regex"],
+      "matchDepNames": ["aws-lambda"],
+      "branchName": "{{{branchPrefix}}}aws-lambda/{{{additionalBranchPrefix}}}{{{newVersion}}}"
+    }
+  ]
+}
