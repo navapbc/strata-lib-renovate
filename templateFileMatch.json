@@ -2,6 +2,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Allow rules to match Strata templates files for updates",
+  // while the GitHub Action files will fail to parse as valid YAML (because
+  // they aren't), Renovate can still update many things as it uses regexes for
+  // a variety of its functionality which doesn't require being able to parse
+  // the entire file
   "github-actions": {
     "managerFilePatterns": [
       "/^template/\\.github/(?:workflows|actions)/.+\\.ya?ml(?:\\.jinja)?$/"
