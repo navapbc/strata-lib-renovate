@@ -15,6 +15,7 @@ dependencyDashboard.json                      | Tweaked settings for Dependency 
 groupLangUpdatesRuby.json                     | Group updates to the Ruby language
 groupNonMajorUpdatesByManager.json            | Group non-major package updates by package manager
 labels.json                                   | Apply standard Strata labels
+playwright.json                               | Group playwright package and Docker image updates
 security.json                                 | Base security/vulnerability settings
 strataTemplate.json                           | Default config for Strata templates themselves
 strataTemplateSeparateTemplateOnly.json       | Separate out changes that are for the template itself and do not impact instances

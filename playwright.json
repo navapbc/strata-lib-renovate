@@ -1,0 +1,22 @@
+// -*- mode: jsonc -*-
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Group playwright package and Docker image updates",
+  "packageRules": [
+    // we generally want the Docker image version to be coupled to the version
+    // of the package in the tests and the default behavior upstream doesn't do
+    // that, maybe that will change in the future, but for now can achieve that
+    // with this
+    //
+    // https://github.com/renovatebot/renovate/discussions/23889#discussioncomment-9932661
+    {
+      "groupName": "Playwright",
+      "matchPackageNames": [
+        "playwright",
+        "@playwright/test",
+        "mcr.microsoft.com/playwright"
+      ],
+      "matchDatasources": ["docker", "npm"]
+    }
+  ]
+}
