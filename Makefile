@@ -12,8 +12,9 @@ lint-presets-have-description: ## Ensure preset files have a "description" field
 fmt: ## Format code
 	git ls-files "*.nix" -z | parallel -0 nix fmt
 
+SEP_CHAR := @
 generate-preset-summary-table:
-	@grep -oP '^  "description": "\K(.*)(?=",$$)' $(PRESET_FILES) | (echo "Preset:Description"; echo "---:---"; cat) | column -t -s ':' -o ' | '
+	@grep -oP '^  "description": "\K(.*)(?=",$$)' $(PRESET_FILES) | sed 's/:/$(SEP_CHAR)/' | (echo "Preset$(SEP_CHAR)Description"; echo "---$(SEP_CHAR)---"; cat) | column -t -s '$(SEP_CHAR)' -o ' | '
 
 SUMMARY_TABLE_BEGIN_MARKER := <!-- preset_summary_table_begin -->
 SUMMARY_TABLE_END_MARKER := <!-- preset_summary_table_end -->
