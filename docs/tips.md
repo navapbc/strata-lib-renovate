@@ -14,9 +14,32 @@ High level things to always keep in mind:
   it's okay to just disable/ignore certain pieces in Renovate and handle them
   manually (or with other tools) if that feels simpler.
 
+## Make certain updates opt-in
+
+While the general recommended workflow is to broadly allow Renovate to create
+update changes _automatically_ (possibly on a certain schedule rather than
+immediately), there are occasions where you don't want Renovate to do that,
+either because:
+
+a) you are introducing Renovate to an existing project with a lot of updates and
+   it's better to manually order things, or
+b) some packages are more involved to handle updates for, or don't follow a
+   release pattern where a new version implies you should update
+
+Rather than ignoring the updates entirely (see next section), it's generally
+better to just require manual approval for the things you want to "opt-in"
+updates for. This preserves visibility for what updates are available (they
+still show up on the Dependency Dashboard) and makes it easier to kick them off
+when you are ready (just click a checkbox).
+
+See the [Dependency Dashboard Approval][dep-dash-approval] docs for
+configuration settings for the different situations above.
+
+[dep-dash-approval]: https://docs.renovatebot.com/key-concepts/dashboard/#dependency-dashboard-approval-workflow
+
 ## Ignore updates for specific packages
 
-Add a `pacakgeRules` block like:
+Add a `packageRules` block like:
 
 ```yaml
 {
