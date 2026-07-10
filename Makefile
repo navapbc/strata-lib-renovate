@@ -1,4 +1,4 @@
-PRESET_FILES := $(wildcard *.json)
+PRESET_FILES := $(filter-out renovate.json, $(wildcard *.json))
 
 check: ## Run checks
 check: lint-presets-valid lint-presets-have-description
