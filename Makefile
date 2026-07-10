@@ -1,4 +1,8 @@
-PRESET_FILES := $(wildcard *.json)
+# If we are going manually maintain a list, make it the shortest one, so we'll
+# just treat all root-level JSON files as Renovate presets, _except_ the special
+# ones which are not presets
+NON_PRESET_FILES := renovate.json
+PRESET_FILES := $(filter-out $(NON_PRESET_FILES), $(wildcard *.json))
 
 check: ## Run checks
 check: lint-presets-valid lint-presets-have-description
