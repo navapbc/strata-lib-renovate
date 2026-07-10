@@ -15,4 +15,4 @@ jobs:
       - uses: ./.github/actions/setup-nix
 
       - name: Run lint
-        run: nix develop --command bash -c "make check"
+        run: nix develop --command bash -c "make -k check"
