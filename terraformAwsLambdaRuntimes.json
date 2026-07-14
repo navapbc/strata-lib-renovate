@@ -39,7 +39,8 @@
     {
       "matchManagers": ["regex"],
       "matchDepNames": ["aws-lambda"],
-      "branchName": "{{{branchPrefix}}}aws-lambda/{{{additionalBranchPrefix}}}{{{newVersion}}}"
+      // branchTopic might be more appropriate, but isn't working
+      "groupSlug": "aws-lambda-runtime-{{{newVersion}}}"
     },
     // the OS-only runtimes switched from version numbers to years (2 -> 2023,
     // at time of writing), which is too big of a "major" bump with most
