@@ -8,6 +8,7 @@
   ],
   "vulnerabilityAlerts": {
     "addLabels": [
+      "scope: dependencies",
       "kind: security"
     ]
   }
