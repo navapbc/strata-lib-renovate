@@ -31,5 +31,6 @@
     "github>navapbc/strata-lib-renovate:labels",
     "github>navapbc/strata-lib-renovate:security",
     "github>navapbc/strata-lib-renovate:templateFileMatch",
+    "github>navapbc/strata-lib-renovate:includeFromVersion",
   ]
 }

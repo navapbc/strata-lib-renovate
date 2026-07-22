@@ -14,6 +14,7 @@ default.json                                  | General recommended config
 dependencyDashboard.json                      | Tweaked settings for Dependency Dashboard
 groupLangUpdatesRuby.json                     | Group updates to the Ruby language
 groupNonMajorUpdatesByManager.json            | Group non-major package updates by package manager
+includeFromVersion.json                       | Include current version in update titles
 labels.json                                   | Apply standard Strata labels
 playwright.json                               | Group playwright package and Docker image updates
 security.json                                 | Base security/vulnerability settings
